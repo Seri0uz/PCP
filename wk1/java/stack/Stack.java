@@ -5,10 +5,6 @@ public class Stack<T> {
         this.head = null;
     }
 
-    public int size() {
-        return this.size;
-    }
-
     public void push(Element<T> node){
         node.link(this.head);
         this.head = node;
@@ -31,6 +27,10 @@ public class Stack<T> {
 
     public boolean isEmpty() {
         return this.head == null;
+    }
+
+    public int size() {
+        return this.size;
     }
 
     public void print() {
