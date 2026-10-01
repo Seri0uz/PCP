@@ -2,11 +2,11 @@
 
 void printNumbersGoto(int n) {
     int i = 0;
-    start:
-        if (i <= n)
-            goto counter;
-        else
+    start: {
+            if (i <= n)
+                goto counter;
             return;
+        }
 
     counter:
         printf ("%d ", i);
