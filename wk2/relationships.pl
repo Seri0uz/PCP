@@ -23,10 +23,10 @@ grandmother(GM, GC) :-
     mother(GM, P),
     parent(P, GC).
 
-offspring(D, A) :-
-    parent(A, D).
-offspring(D, A) :-
-    parent(P, D),
+offspring(O, A) :-
+    parent(A, O).
+offspring(O, A) :-
+    parent(P, O),
     offspring(P, A).
     
 %a)
@@ -50,17 +50,17 @@ offspring(D, A) :-
 
 %5)
 %a)
-% op(1150, xfx, mother).
+op(1150, xfx, mother).
 % liz mother X.
 
 %b)
-% op(1150, xfx, offspring).
+op(1150, xfx, offspring).
 % ann offspring mike.
 
 %6)
 %a)
 % X is 16 / 4 / 2.
-% X=2, weil yfx linksassoziativ ist wird von links nach rechts gerechnet. 
+% X=2, weil yfx linksassoziativ ist wird von links nach rechts gerechnet. Operandenpräferenz
 % 16/4 = 4 und 4/2 = 2
 
 %b) Y = 3, X = Y - 1.
