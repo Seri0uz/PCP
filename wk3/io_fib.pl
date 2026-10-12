@@ -6,5 +6,7 @@ N1 >= 0, % avoid underflow
 Sum is A + B, % accumulator Sum
 fib_tr(N1, B, Sum, F). % tail-recursisve call
 
-io_fib :- write('Gib eine Zahl ein: '), read(NUMBER), process(NUMBER).
-process(NUMBER) :- fib_tr(NUMBER, X), write('Die '), write(NUMBER), write('. Fibonacci-Zahl ist '), writeln(X).
+io_fib :- write('Gib eine Zahl ein: '), 
+    read(NUMBER), 
+    fib_tr(NUMBER, RESULT), 
+    write('Die '), write(NUMBER), write('. Fibonacci-Zahl ist '), writeln(RESULT).

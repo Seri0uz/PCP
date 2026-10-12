@@ -16,3 +16,9 @@ fak(N, F) :- % general case
 fak_clear :- 
     retractall(fak_as(_,_)), 
     write('(Hinweis: alle gespeicherten Werte wurden gelöscht.)').
+
+
+% fak(7, N).
+% fak(8, N).
+% fak_clear.
+% fak(7, N).
