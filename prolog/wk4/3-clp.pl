@@ -13,3 +13,5 @@ donald_gerald([D,O,N,A,L,D] + [G,E,R,A,L,D] = [R,O,B,E,R,T]) :-
         R*100000 + O*10000 + B*1000 + E*100 + R*10 + T,
         D #\= 0, G #\= 0, R #\= 0,
 	label(Vars).
+
+%donald_gerald(As + Bs = Cs).

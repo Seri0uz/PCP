@@ -37,8 +37,13 @@ relationship(LIST, RESULT):-
     member(firstPerson=FIRST, LIST),
     member(relationship=RELATION, LIST),
     member(secondPerson=SECOND, LIST),
-    ( call(RELATION, FIRST, SECOND), RESULT = true ; 
-    \+ call(RELATION, FIRST, SECOND), RESULT = false).
+    check_relation(RELATION, FIRST, SECOND, RESULT).
+
+check_relation(RELATION, FIRST, SECOND, true) :-
+    call(RELATION, FIRST, SECOND).
+
+check_relation(RELATION, FIRST, SECOND, false) :-
+    \+ call(RELATION, FIRST, SECOND).
 
 
 
@@ -79,19 +84,14 @@ sudoku(LIST, RESULT) :-
 
 
 
-
-
-
-
-
 solve(PROBLEM,ID) :-
     atomic_list_concat(['http://localhost:16316/problem/', PROBLEM],PostURL),
     atomic_list_concat([PostURL, '/', ID], GetURL),
     http_get(GetURL, json(LIST), []),
     call(PROBLEM,LIST,RESULT),
-    ANSWER= json([solution=RESULT, id=ID]),
-    http_post(PostURL,json(ANSWER), REPLY, []),
+    http_post(PostURL, json(json([solution=RESULT, id=ID])), REPLY, []),
+    writeln('Resultat ist: '),
     writeln(RESULT),
-    write('Resultat ist: '),
+    write('Antwort ist: '),
     write(REPLY).
 
