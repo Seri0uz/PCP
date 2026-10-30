@@ -65,6 +65,11 @@ blocks([J, K, L | Bs1], [M, N, O | Bs2], [P, Q, R | Bs3]) :-
   all_distinct([J, K, L, M, N, O, P, Q, R]),
   blocks(Bs1, Bs2, Bs3).
 
+sudoku(LIST, RESULT) :-
+    member(sudoku=GRID, LIST),
+    replace_grid(GRID, RESULT),
+    sudoku_solver(RESULT).
+
 replace_grid([], []).
 replace_grid([ROW | REST], [NEWROW | NEWREST]) :-
     maplist(replace, ROW, NEWROW),
@@ -73,11 +78,6 @@ replace_grid([ROW | REST], [NEWROW | NEWREST]) :-
 replace(0,_).
 replace(N,N) :-
     N \= 0.
-
-sudoku(LIST, RESULT) :-
-    member(sudoku=GRID, LIST),
-    replace_grid(GRID, RESULT),
-    sudoku_solver(RESULT).
 
 
 
