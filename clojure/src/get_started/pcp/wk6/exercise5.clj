@@ -8,6 +8,8 @@
         (recur (rest remaining) (conj result 6 8))
         (recur (rest remaining) (conj result (dec (first remaining))))))))
 
+(schritt start)
+(schritt (schritt start))
   
 (defn counter [zustand n]
   (if (zero? n)

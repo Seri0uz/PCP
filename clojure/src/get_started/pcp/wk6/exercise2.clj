@@ -36,3 +36,4 @@
   (map second col)])
 
 (revert-map [[1 4] [2 5] [3 6]])
+

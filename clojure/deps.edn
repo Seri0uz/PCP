@@ -1,1 +1,2 @@
-{:deps {org.clojure/clojure {:mvn/version "1.12.1"}}}
+{:paths ["src" "src/get_started/pcp"]
+ :deps {org.clojure/clojure {:mvn/version "1.12.1"}}}
