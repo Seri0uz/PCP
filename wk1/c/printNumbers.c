@@ -7,7 +7,6 @@ void printNumbersGoto(int n) {
                 goto counter;
             return;
         }
-
     counter:
         printf ("%d ", i);
         i++;
