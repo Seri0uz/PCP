@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Exercise2 {
     public void printNumbersAndSquares(Integer[] numbers) {
-        Arrays.asList(numbers).forEach(number -> System.out.println(number +": " + (number * number) ));
+        Arrays.asList(numbers).forEach(n -> System.out.println(n +": " + (n * n) ));
     }
     public static void main(String[] args) {
     Exercise2 ex2 = new Exercise2();
