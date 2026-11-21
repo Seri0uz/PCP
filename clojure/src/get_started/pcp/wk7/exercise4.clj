@@ -1,10 +1,8 @@
 (mapcat (fn [x] (map #(+ x %) (range 3))) (range 3))
 
-(for [bereich [[0 2] [1 3] [2 4]] 
-  :let [[from to] bereich]
-  i (range from (inc to))]
-  i)
-
+(for [zahl1 (range 10)
+      zahl2 (range 10)]
+  (+ zahl1 zahl2))
 
 
 
